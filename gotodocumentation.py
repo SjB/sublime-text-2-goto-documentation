@@ -113,6 +113,11 @@ class GotoDocumentationCommand(sublime_plugin.TextCommand):
     def cmake_doc(self, keyword, scope):
         open_url('http://cmake.org/cmake/help/v2.8.8/cmake.html#command:%s' % keyword.lower())
 
+    def cpp_doc(self, keyword, scope):
+        open_url('http://www.cplusplus.com/search.do?q=%s' % keyword)
+
+    c_doc = cpp_doc
+    
     def run_command(self, command, callback=None, **kwargs):
         if not callback:
             callback = self.display_output
